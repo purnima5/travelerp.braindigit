@@ -1,0 +1,28 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Chrome(r"C:\Users\Purnima Sah\PycharmProjects\firstseleniumtest\Driver\chromedriver.exe")
+driver.implicitly_wait(10)
+driver.get("http://travelerp.braindigit.com/")
+print(driver.title)
+print(driver.current_url)
+email_ele =driver.find_element_by_name("Email")
+pass_ele =driver.find_element_by_name("Password")
+email_ele.send_keys("sgodar34@yopmail.com")
+pass_ele.send_keys("000000")
+driver.find_element_by_tag_name("button").click()
+Administration=driver.find_element_by_xpath("/html/body/div/div[1]/div/ul/li[1]/a").click()
+ManageAirlines=driver.find_element_by_xpath("/html/body/div/div[1]/div/ul/li[1]/ul/li[1]").click()
+#Refreshcachebutton =driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[5]/div[1]/div/a[1]").click()
+AddNewbutton =driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[5]/div[1]/div/a[2]").click()
+#Logo =driver.find_element_by_xpath("/html/body/div/div[2]/div/div[5]/div/div/div/div[2]/form/div[1]/div[2]/div[3]").send_keys("Web 1920 – 1.jpg")
+Code =driver.find_element_by_id("Code").send_keys("3452")
+Name=driver.find_element_by_id("Name").send_keys("Nepal airways")
+Country=driver.find_element_by_xpath("/html/body/div/div[2]/div/div[5]/div/div/div/div[2]/form/div[4]/div/div[2]/select").click()
+Website=driver.find_element_by_id("Website").send_keys("https://www.nepalairways.com/")
+SystemBlackout =driver.find_element_by_xpath("/html/body/div/div[2]/div/div[5]/div/div/div/div[2]/form/div[6]").click()
+Save=driver.find_element_by_xpath("/html/body/div/div[2]/div/div[5]/div/div/div/div[2]/form/div[7]").click()
+Back=driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[5]/div/div/div/div[1]/div/a").click()
+
+#Administration=driver.find_element_by_xpath("/html/body/div/div[1]/div/ul/li[2]/a").click()
+driver.close()
+
